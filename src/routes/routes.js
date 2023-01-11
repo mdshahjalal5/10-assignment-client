@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
+import Checkout from "../components/Checkout";
+import CourseDetails from "../components/CourseDetails";
 import Courses from "../components/Courses";
 import { Home } from "../components/Home";
+import PrivateRoutes from "../components/PrivateRoutes";
 import { data } from "../dataLoader";
 import Main from "../layout/Main";
 
@@ -19,6 +22,17 @@ import Main from "../layout/Main";
                 loader:function(){
                     return  data();
                 }
+            }, 
+            {
+                path:'/courses/:id',
+                element:<CourseDetails></CourseDetails>,
+                loader:({params})=>{
+                    return fetch(`https://10-server-assignment.vercel.app/courses/${params.id}`)
+                }
+            }, 
+            {
+                path:'checkout', 
+                element:<PrivateRoutes><Checkout></Checkout></PrivateRoutes>
             }
         ]
     }, 
