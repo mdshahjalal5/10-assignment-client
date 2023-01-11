@@ -1,5 +1,8 @@
 # Learning => 
 > 1. server => send 
+# Incident  =:> 
+1. pending =>  loaderData func 
+2. 
 # iacbr push 
 # direction 
 1. navbar => logo, w name, courses, faq, blog, toggle theme, prof picture or login , hover pic name show 
@@ -19,3 +22,12 @@
 8. vercel server 
 9. 
 optional footer/ icon / profile page 
+
+
+
+# health => 
+fa tion nut pro oli 
+> 1. fa tion =>fat adaptation => burns fat instead of carbs => 
+> 2. nut => ghee mustard 
+> 3. ex oli => diff of extra virgin olive oil && olive oil 
+> 4. pro => probiotics => lemon water with ginger => acteria + good gut  =>  helpful bacteria => exist in certain foods && supple. 
