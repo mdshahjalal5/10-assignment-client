@@ -5,6 +5,7 @@ import Courses from "../components/Courses";
 import { Home } from "../components/Home";
 import Login from "../components/Login";
 import PrivateRoutes from "../components/PrivateRoutes";
+import Register from "../components/Register";
 import { data } from "../dataLoader";
 import Main from "../layout/Main";
 
@@ -38,6 +39,11 @@ import Main from "../layout/Main";
             {
                 path:'/login', 
                 element:<Login></Login>
+            }, 
+            {
+                path:'/register', 
+                element:<Register></Register>, 
+                
             }
         ]
     }, 
