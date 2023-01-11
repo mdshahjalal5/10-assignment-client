@@ -16,7 +16,7 @@ const Courses = () => {
                 <div className='courses-layout '>
                     {/* list item */}
                     
-                    <div className='border-4 border-red-700'>div1
+                    <div className='border-4 border-red-700 '>div1
                         
                         {courses.map(function (course) {
                             return <Link key={course.id} to={`/courses/${course.id}`}>
@@ -45,7 +45,7 @@ const Courses = () => {
                         })}
                     </div>
 
-                    <div className='border-4 border-red-700 grid grid-cols-2 gap-8 p-2'>
+                    <div className='border-4 border-red-700 grid lg:grid-cols-2 gap-8 p-2'>
                         {courses.map(course=><Course key={course.id} course={course}></Course>)}
                     </div>
                 </div>

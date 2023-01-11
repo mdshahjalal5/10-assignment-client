@@ -67,18 +67,18 @@ export const Nav = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="/"
-                                aria-label="About us"
-                                title="About us"
+                                to="/register"
+                                aria-label="Register"
+                                title="Register"
                                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                             >
-                                About us
+                                Register
                             </NavLink>
                         </li>
                         <li>
                             <NavLink
                                 to="/login"
-                                aria-label="About us"
+                                aria-label="login"
                                 title="Login"
                                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                             >
@@ -190,18 +190,18 @@ export const Nav = () => {
                                             </li>
                                             <li>
                                                 <NavLink
-                                                    to="/"
-                                                    aria-label="About us"
-                                                    title="About us"
+                                                    to="/register"
+                                                    aria-label="Register"
+                                                    title="Register"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
-                                                    About us
+                                                    Register
                                                 </NavLink>
                                             </li>
                                             <li>
                                                 <NavLink
                                                     to="/login"
-                                                    aria-label="About us"
+                                                    aria-label="Register"
                                                     title="Login"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-accent-400"
                                                 >

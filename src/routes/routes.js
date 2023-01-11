@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Blog from "../components/Blog";
 import Checkout from "../components/Checkout";
 import CourseDetails from "../components/CourseDetails";
 import Courses from "../components/Courses";
@@ -18,6 +19,10 @@ import Main from "../layout/Main";
                 path:'/', 
                 element:<Home></Home>
             }, 
+            {
+                path:"home", 
+                element:<Home></Home>
+            },
             {
                 path:'/courses', 
                 element:<Courses/>, 
@@ -43,7 +48,11 @@ import Main from "../layout/Main";
             {
                 path:'/register', 
                 element:<Register></Register>, 
-                
+
+            }, 
+            {
+                path:'/blog', 
+                element:<Blog></Blog>
             }
         ]
     }, 
