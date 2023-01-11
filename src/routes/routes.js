@@ -3,6 +3,7 @@ import Checkout from "../components/Checkout";
 import CourseDetails from "../components/CourseDetails";
 import Courses from "../components/Courses";
 import { Home } from "../components/Home";
+import Login from "../components/Login";
 import PrivateRoutes from "../components/PrivateRoutes";
 import { data } from "../dataLoader";
 import Main from "../layout/Main";
@@ -33,6 +34,10 @@ import Main from "../layout/Main";
             {
                 path:'checkout', 
                 element:<PrivateRoutes><Checkout></Checkout></PrivateRoutes>
+            }, 
+            {
+                path:'/login', 
+                element:<Login></Login>
             }
         ]
     }, 
