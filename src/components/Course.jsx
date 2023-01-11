@@ -1,10 +1,10 @@
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import React from 'react';
 
 const Course = ({ course }) => {
     console.log(course);
     const navigate = useNavigate();
-    const { id, name, logo, total } =course;
+    const { id, name, logo } =course;
     return (
         <div className='py-'>
 

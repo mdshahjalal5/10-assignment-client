@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link, useLoaderData, useNavigate } from 'react-router-dom';
+import { Link, useLoaderData,  } from 'react-router-dom';
 
 const CourseDetails = () => {
-    const navigate = useNavigate();
-    const [{ id, name, logo, total, details }] = useLoaderData();
+    const [{ name, logo, details }] = useLoaderData();
     // const  name = useLoaderData()
     console.log(name);
     return (

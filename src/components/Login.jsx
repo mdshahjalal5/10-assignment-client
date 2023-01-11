@@ -21,7 +21,7 @@ const Login = () => {
                     
                     <div>
 
-                        <label for="terms and condition" class="ml-2 text-sm font-medium text-gray-900">terms and condition</label>
+                        <Link style={{textDecoration:'underline'}} to={'/terms'}><label for="terms and condition" class="ml-2 text-sm font-medium text-gray-900">terms and condition</label></Link>
                     </div>
                 </div>
                 <p className='mb-2'>Don't  have an account? <Link style={{textDecoration:"underline"}}  to={'/register'}>Register</Link> </p>
