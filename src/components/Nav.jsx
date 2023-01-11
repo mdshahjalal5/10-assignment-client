@@ -12,7 +12,7 @@ export const Nav = () => {
                     <Link
                         to="/"
                         aria-label="Company"
-                        title="Fun with Code"
+                        title="Shine your skills "
                         className="inline-flex items-center"
                     >
                         <svg
@@ -31,7 +31,7 @@ export const Nav = () => {
                             <rect x="14" y="11" width="7" height="12" />
                         </svg>
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                            Fun with Code
+                            Shine your skills 
                         </span>
                     </Link>
                     <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -47,12 +47,12 @@ export const Nav = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="topics"
-                                aria-label="Topics"
-                                title="Topics"
+                                to="Courses"
+                                aria-label="Courses"
+                                title="Courses"
                                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                             >
-                                Topics
+                                Courses
                             </NavLink>
                         </li>
                         <li>
@@ -73,6 +73,16 @@ export const Nav = () => {
                                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                             >
                                 About us
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/login"
+                                aria-label="About us"
+                                title="Login"
+                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                            >
+                                Login
                             </NavLink>
                         </li>
                     </ul>
@@ -107,7 +117,7 @@ export const Nav = () => {
                                             <Link
                                                 to="/"
                                                 aria-label="Company"
-                                                title="Fun with Code"
+                                                title="Shine your skills "
                                                 className="inline-flex items-center"
                                             >
                                                 <svg
@@ -126,7 +136,7 @@ export const Nav = () => {
                                                     <rect x="14" y="11" width="7" height="12" />
                                                 </svg>
                                                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                                    Fun with Code
+                                                    Shine your skills 
                                                 </span>
                                             </Link>
                                         </div>
@@ -160,12 +170,12 @@ export const Nav = () => {
                                             </li>
                                             <li>
                                                 <NavLink
-                                                    to="topics"
-                                                    aria-label="Topics"
-                                                    title="Topics"
+                                                    to="Courses"
+                                                    aria-label="Courses"
+                                                    title="Courses"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
-                                                    Topics
+                                                    Courses
                                                 </NavLink>
                                             </li>
                                             <li>
@@ -186,6 +196,16 @@ export const Nav = () => {
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
                                                     About us
+                                                </NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink
+                                                    to="/login"
+                                                    aria-label="About us"
+                                                    title="Login"
+                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-accent-400"
+                                                >
+                                                    Login
                                                 </NavLink>
                                             </li>
                                         </ul>
