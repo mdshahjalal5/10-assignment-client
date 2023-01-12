@@ -1,11 +1,12 @@
 
 import QuranImg from '../image/Python.jpeg'
 import { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "./UserContext";
 export const Nav = () => {
-    const { user } = useContext(AuthContext)
-    console.log(user);
+    const { user, logOut } = useContext(AuthContext)
+    const navigate = useNavigate();
+    console.log(logOut, );
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
@@ -196,7 +197,7 @@ export const Nav = () => {
                                                     Blog
                                                 </NavLink>
                                             </li>
-                                            { ! user && user?.uid ? <>
+                                            { ! (user && user?.uid )? <>
                                                 <li>
                                                     <NavLink
                                                         to="/register"
@@ -217,9 +218,19 @@ export const Nav = () => {
                                                         Login
                                                     </NavLink>
                                                 </li>
-                                            </>:  <div className="h-16 w-16 rounded-full border-4 border-red-900">
-                                                    
-                                                </div>
+                                            </>:  <>
+                                                    <div className="h-16 w-16 rounded-full border-4 border-red-900">
+                                                        <img width={'100%'} className='rounded-full' src={user?.photoURL ? user.photoURL : QuranImg} alt="" />
+                                                    </div>
+                                                    <Link onClick={()=>{
+                                                        return logOut()
+                                                        .then(()=>{
+                                                            navigate('/')
+                                                        })
+                                                    }}>
+                                                        Log out
+                                                    </Link>
+                                            </>
                                                 }
                                         </ul>
                                     </nav>
