@@ -53,7 +53,7 @@ import Main from "../layout/Main";
             }, 
             {
                 path:'/blog', 
-                element:<Blog></Blog>
+                element: <PrivateRoutes><Blog></Blog></PrivateRoutes>
             }, 
             {
                 path:'terms', 

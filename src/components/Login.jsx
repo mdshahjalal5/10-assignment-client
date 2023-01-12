@@ -1,11 +1,45 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { GithubAuthProvider } from 'firebase/auth';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { AuthContext } from './UserContext';
 
 const Login = () => {
+    const { login, providerSignIn } = useContext(AuthContext)
+    const handleGithubSignIn = () => {
+        providerSignIn(new GithubAuthProvider())
+            .then(function (user) {
+                toast.success('Successfully git hub sign in ')
+            })
+            .catch(err => {
+                console.log('an error ocucured', err);
+            })
+    }
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+    console.log(location, 'location');
+    console.log(from, 'from')
+    console.log(login)
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(form, email, password)
+        return login(email, password)
+            .then(user => {
+                toast.success('user succesfully login')
+                navigate(from, { replace: true })
+            })
+            .catch(err => {
+                toast.error(err.message)
+            })
+    }   
     return (
         <div className='w-1/2   border-red mx-auto pt-32'>
 
-            <form className=''>
+            <form onSubmit={handleLogin}>
                 <div className="mb-1">
                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
                     <input type="email" id="email" name='email' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email" required/>

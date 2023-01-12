@@ -1,3 +1,4 @@
+import 'react-toastify/dist/ReactToastify.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -5,12 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
 import { routes } from './routes/routes';
 import UserContext from './components/UserContext';
+import { ToastContainer } from 'react-toastify';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <UserContext>    <RouterProvider router={routes}></RouterProvider>
-</UserContext>
+    <UserContext> 
+          <ToastContainer position='top-center'></ToastContainer>
+         <RouterProvider router={routes}></RouterProvider>
+    </UserContext>
   </React.StrictMode>
 );
 

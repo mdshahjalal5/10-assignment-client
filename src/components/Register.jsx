@@ -1,18 +1,40 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from './UserContext';
 
 const Register = () => {
-    const { signUp } = useContext(AuthContext)
+    const { signUp, updateName, emailVerify } = useContext(AuthContext)
+    const navigate = useNavigate();
     console.log(signUp);
     const handleRegister = (event) => {
         event.preventDefault();
         let form, mail, pass; 
         form = event.target;
+        const name = form.name.value;
         mail = form.email.value;
         pass = form.password.value;
         console.log(mail, pass);
         signUp(mail, pass)
+            .then((result) => {
+                toast.success('successfully sign up')
+                updateName(name)
+                    .then((result) => {
+                        navigate('/')
+                        toast.info('Name updated');
+                        //send email verification message 
+                        emailVerify()
+                            .then((result) => {
+                                toast.info('verification email has sent please verify first')
+                            }).catch((err) => {
+                                toast.error(err.message)
+                            });
+                    }).catch((err) => {
+                        toast.warn(err.message)
+                    });
+            }).catch((err) => {
+                toast.error('error occured')
+            })
     }
     return (
         <div>

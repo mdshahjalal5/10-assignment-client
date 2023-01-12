@@ -1,8 +1,11 @@
 
-
-import { useState } from "react";
+import QuranImg from '../image/Python.jpeg'
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "./UserContext";
 export const Nav = () => {
+    const { user } = useContext(AuthContext)
+    console.log(user);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
@@ -65,26 +68,31 @@ export const Nav = () => {
                                 Blog
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink
-                                to="/register"
-                                aria-label="Register"
-                                title="Register"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Register
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to="/login"
-                                aria-label="login"
-                                title="Login"
-                                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                            >
-                                Login
-                            </NavLink>
-                        </li>
+                        {user && user?.uid ? 
+                            <div className="h-16 w-16 rounded-full border-4 border-red-900">
+                                <img width={'100%'} className='rounded-full' src={user?.photoURL ? user.photoURL : QuranImg} alt="" />
+                            </div> : <>  <li>
+                                <NavLink
+                                    to="/register"
+                                    aria-label="Register"
+                                    title="Register"
+                                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                >
+                                    Register
+                                </NavLink>
+                            </li>
+                                <li>
+                                    <NavLink
+                                        to="/login"
+                                        aria-label="login"
+                                        title="Login"
+                                        className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                    >
+                                        Login
+                                    </NavLink>
+                                </li>
+                            </>}
+                   
                     </ul>
 
                     <div className="lg:hidden">
@@ -188,26 +196,31 @@ export const Nav = () => {
                                                     Blog
                                                 </NavLink>
                                             </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/register"
-                                                    aria-label="Register"
-                                                    title="Register"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                                >
-                                                    Register
-                                                </NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/login"
-                                                    aria-label="Register"
-                                                    title="Login"
-                                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-accent-400"
-                                                >
-                                                    Login
-                                                </NavLink>
-                                            </li>
+                                            { ! user && user?.uid ? <>
+                                                <li>
+                                                    <NavLink
+                                                        to="/register"
+                                                        aria-label="Register"
+                                                        title="Register"
+                                                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                    >
+                                                        Register
+                                                    </NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink
+                                                        to="/login"
+                                                        aria-label="Register"
+                                                        title="Login"
+                                                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal-accent-400"
+                                                    >
+                                                        Login
+                                                    </NavLink>
+                                                </li>
+                                            </>:  <div className="h-16 w-16 rounded-full border-4 border-red-900">
+                                                    
+                                                </div>
+                                                }
                                         </ul>
                                     </nav>
                                 </div>
