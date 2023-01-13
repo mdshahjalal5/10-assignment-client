@@ -1,7 +1,10 @@
 
 
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "./UserContext";
 export const Home = () => {
+    const { user } = useContext(AuthContext)
     return (
         <div className="flex bg-gray-100 p-8 my-12 flex-col justify-between max-w-xl px-4 mx-auto lg:pt-16 lg:flex-row md:px-8 lg:max-w-screen-xl">
             <div className="pt-16 mb-16 lg:mb-0 lg:pt-32 lg:max-w-lg lg:pr-5">
@@ -24,21 +27,39 @@ export const Home = () => {
                     </p>
                 </div>
                 <div className="flex items-center">
-                    <Link
+              {user?.uid ? <>
+                        <Link
 
-                        to="/"
-                        className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-gray-400 bg-gray-600 focus:shadow-outline focus:outline-none"
-                    >
-                        Get started
-                    </Link>
-                    <Link
+                            to="/courses"
+                            className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-gray-400 bg-gray-600 focus:shadow-outline focus:outline-none"
+                        >
+                            Courses
+                        </Link>
+                        <Link
 
-                        to="/"
-                        aria-label=""
-                        className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 border border-red-500 p-3 rounded"
-                    >
-                        Learn more
-                    </Link>
+                            to="/blog"
+                            aria-label=""
+                            className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 border border-red-500 p-3 rounded"
+                        >
+                            Blogs
+                        </Link>
+              </>:<>
+                            <Link
+
+                                to="/login"
+                                className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-gray-400 bg-gray-600 focus:shadow-outline focus:outline-none"
+                            >
+                                Login
+                            </Link>
+                            <Link
+
+                                to="/register"
+                                aria-label=""
+                                className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 border border-red-500 p-3 rounded"
+                            >
+                                Register
+                            </Link>
+              </>}
                 </div>
             </div>
             <div>

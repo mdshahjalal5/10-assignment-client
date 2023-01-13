@@ -6,7 +6,7 @@ const CourseDetails = () => {
     // const  name = useLoaderData()
     console.log(name);
     return (
-        <div className='flex justify-center items-center min-h-screen px-36 border-4 border-red-400'>
+        <div className='flex justify-center items-center min-h-screen px-36 mt-12 border-red-400'>
            
 
             <div className=" max-w-3/4 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">

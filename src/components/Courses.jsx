@@ -1,4 +1,5 @@
 import React from 'react';
+import QuranImg from '../image/Python.jpeg'
 import { Link, useLoaderData } from 'react-router-dom';
 import Course from './Course';
 import './Courses.css'
@@ -8,15 +9,14 @@ const Courses = () => {
    
     return (
         <>
-            <div>
-                <h2>All courses {courses.length} </h2>
-            </div>
+           
+            <h2 className='text-center pt-12 font-semibold text-2xl'>All courses {courses?.length}</h2>
 
-          <div className="container mx-auto">
+          <div className="container mx-auto mt-2">
                 <div className='courses-layout '>
                     {/* list item */}
                     
-                    <div className='border-4 border-red-700 '>div1
+                    <div className=' '>
                         
                         {courses.map(function (course) {
                             return <Link key={course.id} to={`/courses/${course.id}`}>
@@ -24,14 +24,12 @@ const Courses = () => {
                                     <li className="pb-3 sm:pb-4">
                                         <div className="flex items-center space-x-4">
                                             <div className="flex-shrink-0">
-                                                <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="" />
+                                                <img className="w-8 h-8 rounded-full" src={course?.logo ? course?.logo :QuranImg}alt="" />
                                             </div>
                                             <div className="flex-1 min-w-0">
-                                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                                    Neil Sims
-                                                </p>
+                                                
                                                 <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                                    email@flowbite.com
+                                                    {course?.name}
                                                 </p>
                                             </div>
                                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
@@ -45,7 +43,7 @@ const Courses = () => {
                         })}
                     </div>
 
-                    <div className='border-4 border-red-700 grid lg:grid-cols-2 gap-8 p-2'>
+                    <div className=' grid lg:grid-cols-2 gap-8 p-2'>
                         {courses.map(course=><Course key={course.id} course={course}></Course>)}
                     </div>
                 </div>
