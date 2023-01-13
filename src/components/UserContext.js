@@ -63,13 +63,7 @@ const UserContext = ({children}) => {
         const  effect = onAuthStateChanged(auth, user=>{
             setLoading(false);
             setUser(user);
-            if(user){
-                // user signed in user = {}
-                console.log(user);
-            }
-            else{
-                // user not signed in user  = null 
-            }
+       
         })
         return ()=>{
             effect();

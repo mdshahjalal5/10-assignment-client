@@ -5,8 +5,9 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "./UserContext";
 export const Nav = () => {
     const { user, logOut } = useContext(AuthContext)
+    console.log(user?.photoURL);
     const navigate = useNavigate();
-    console.log(logOut, );
+    // console.log(logOut, );
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
@@ -70,9 +71,19 @@ export const Nav = () => {
                             </NavLink>
                         </li>
                         {user && user?.uid ? 
-                            <div className="h-16 w-16 rounded-full border-4 border-red-900">
-                                <img width={'100%'} className='rounded-full' src={user?.photoURL ? user.photoURL : QuranImg} alt="" />
-                            </div> : <>  <li>
+                           <>
+                                <div className="h-16 w-16 rounded-full border-4 border-red-900">
+                                    <img width={'100%'} className='rounded-full' src={user?.photoURL ? user.photoURL : QuranImg} alt="" />
+                                </div>
+                                <Link onClick={() => {
+                                    return logOut()
+                                        .then(() => {
+                                            navigate('/')
+                                        })
+                                }} className='text-gray-100 font-semibold'>
+                                    Log out
+                                </Link>
+                           </> : <>  <li>
                                 <NavLink
                                     to="/register"
                                     aria-label="Register"
