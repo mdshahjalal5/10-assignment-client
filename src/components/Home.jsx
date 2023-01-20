@@ -2,9 +2,11 @@
 
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../useTitle";
 import { AuthContext } from "./UserContext";
 export const Home = () => {
     const { user } = useContext(AuthContext)
+    useTitle('Home')
     return (
         <div className="flex bg-gray-100 p-8 my-12 flex-col justify-between max-w-xl px-4 mx-auto lg:pt-16 lg:flex-row md:px-8 lg:max-w-screen-xl">
             <div className="pt-16 mb-16 lg:mb-0 lg:pt-32 lg:max-w-lg lg:pr-5">
